@@ -12,7 +12,7 @@ router.post('/shorten', async (req, res) => {
     const url = new Url({ originalUrl, shortId })
     await url.save()
 
-    res.json({ shortUrl: `http://shortlink/${shortId}` })
+    res.json({ shortUrl: `http://localhost:5000/${shortId}` })
 })
 
 router.get('/:shortId', async (req, res) => {
