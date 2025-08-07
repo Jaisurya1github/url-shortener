@@ -12,7 +12,7 @@ router.post('/shorten', async (req, res) => {
     const url = new Url({ originalUrl, shortId })
     await url.save()
 
-    res.json({ shortUrl: `http://localhost:5000/${shortId}` })
+    res.json({ shortUrl: `http://shortlink/${shortId}` })
 })
 
 router.get('/:shortId', async (req, res) => {
@@ -28,6 +28,8 @@ router.get('/:shortId', async (req, res) => {
     }
 
     res.status(404).send('URL not found')
+
 })
+
 
 export default router
